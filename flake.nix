@@ -2,10 +2,10 @@
   description = "PrimaMateria dmenu flake";
   inputs.nixpkgs.url = "nixpkgs/nixos-21.11";
   outputs = { self, nixpkgs }: {
-    defaultPackage.x86_64-linux = 
+    packages.x86_64-linux.dmenu-primamateria = 
       with import nixpkgs { system = "x86_64-linux"; };
       stdenv.mkDerivation rec {
-        name = "dmenu_primamateria";
+        name = "dmenu-primamateria";
         src = self;
         buildInputs = [ xorg.libX11 xorg.libXinerama zlib xorg.libXft ];
         postPatch = ''
